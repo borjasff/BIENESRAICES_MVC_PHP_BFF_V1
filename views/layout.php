@@ -60,7 +60,7 @@
                 <nav class="navegacion">
                     <a href="/nosotros">Nosotros</a>
                     <a href="/propiedades">Anuncios</a>
-                    <a href="/blog.php">Blog</a>
+                    <a href="/blog">Blog</a>
                     <a href="/contacto">Contacto</a>
                 </nav>
         </div>
