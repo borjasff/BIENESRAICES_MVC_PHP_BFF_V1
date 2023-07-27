@@ -28,7 +28,7 @@ class Router {
             $rutas_protegidas = ['/admin', 'propiedades/crear', 'propiedades/actualizar', 'propiedades/eliminar', 'vendedores/crear', 'vendedores/actualizar', 'vendedores/eliminar'];
 
             //Detecta con strtok lo que no es esencial de la url como un token y lo elimina
-            $urlActual = strtok($_SERVER['REQUEST_URI'], '?') ?? '/';
+            $urlActual = strtok($_SERVER['PATH_INFO'], '?') ?? '/';
             $metodo = $_SERVER['REQUEST_METHOD'];
 
             if($metodo === 'GET'){
