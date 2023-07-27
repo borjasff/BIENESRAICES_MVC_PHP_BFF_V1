@@ -131,15 +131,18 @@ class PropiedadController {
 
                 //borrar propiedades
     if($_SERVER['REQUEST_METHOD'] === 'POST'){
-        $tipo = $_POST['tipo'];
+
         //validamos los datos
         $id = $_POST['id'];
         $id = filter_var($id, FILTER_VALIDATE_INT);
 
-        //encontrar y eliminar la propiedad
+    if($id){
+        $tipo = $_POST['tipo'];
+
+        if(validarTipoContenido($tipo)){
             $propiedad = Propiedad::find($id);
             $resultado = $propiedad->eliminar();
-        //redireccionar
+
             if($resultado) {
                 header('location: /propiedades');
             }
