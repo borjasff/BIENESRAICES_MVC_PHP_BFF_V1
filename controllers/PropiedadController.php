@@ -14,7 +14,7 @@ class PropiedadController {
         //muestra mensaje condicional
         $resultado = $_GET['resultado'] ?? null;
 
-        $router-> render('propiedades/index', [
+        $router-> render('propiedades/admin', [
             'propiedades' => $propiedades,// se la pasa a la vista
             'resultado' => $resultado,
             'vendedores' => $vendedores
