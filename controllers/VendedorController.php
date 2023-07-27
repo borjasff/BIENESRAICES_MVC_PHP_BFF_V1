@@ -74,7 +74,11 @@ class VendedorController {
 
                 if(validarTipoContenido($tipo)){
                 $vendedor = Vendedor::find($id);
-                $vendedor->eliminar();
+                $resultado = $vendedor->eliminar();
+
+                if($resultado) {
+                    header('location: /propiedades');
+                }
                 }
             }
         } 
