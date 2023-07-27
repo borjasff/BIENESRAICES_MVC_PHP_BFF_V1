@@ -50,7 +50,7 @@ class PaginasController{
 
         if($_SERVER['REQUEST_METHOD'] === 'POST' ){
 
-            $mensaje = null;
+            $mensaje = "";
 
             $respuestas = $_POST['contacto'];
 
