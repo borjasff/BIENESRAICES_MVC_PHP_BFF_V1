@@ -14,7 +14,7 @@ class PropiedadController {
         //muestra mensaje condicional
         $resultado = $_GET['resultado'] ?? null;
 
-        $router-> render('propiedades/admin', [
+        $router-> render('propiedades/index', [
             'propiedades' => $propiedades,// se la pasa a la vista
             'resultado' => $resultado,
             'vendedores' => $vendedores
@@ -60,7 +60,11 @@ class PropiedadController {
                     $image->save(CARPETA_IMAGENES . $nombreImagen);
         
                     //guarda en la base de datos
-                    $propiedad->guardar();
+                    $resultado = $propiedad->guardar();
+
+                    if($resultado) {
+                        header('location: /propiedades');
+                    }
                 }
             }
 
@@ -74,7 +78,7 @@ class PropiedadController {
     }
     public static function actualizar (Router $router) {
 
-        $id = validarORedireccionar('/admin');
+        $id = validarORedireccionar('/propiedades');
         $propiedad = Propiedad::find($id);
         $vendedores = Vendedor::all();
 
@@ -109,7 +113,11 @@ class PropiedadController {
                     //almacenar la imagen
                     $image->save(CARPETA_IMAGENES . $nombreImagen);
                 }
-                $propiedad->guardar();
+                $resultado = $propiedad->guardar();
+
+                if($resultado) {
+                    header('location: /propiedades');
+                }
             }
     }
         $router->render('/propiedades/actualizar', [
@@ -120,7 +128,6 @@ class PropiedadController {
     }
 
     public static function eliminar(){
-        if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
                 //borrar propiedades
     if($_SERVER['REQUEST_METHOD'] === 'POST'){
@@ -137,8 +144,6 @@ class PropiedadController {
             $propiedad->eliminar();
             }
         }
-
-    }
     }
     }
 }
