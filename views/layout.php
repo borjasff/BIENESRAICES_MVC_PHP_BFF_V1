@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="/build/css/app.css">
 </head>
 <body>
-    <header class="header <?php echo $inicio ? 'inicio': ''; ?>">
+    <header class="header ">
         <div class="contenedor contenido-header">
             <div class="barra">
                 <a href="/">
