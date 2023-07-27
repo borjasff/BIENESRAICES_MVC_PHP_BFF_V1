@@ -20,7 +20,7 @@ class Router {
         public function comprobarRutas(){
 
             //Detecta con strtok lo que no es esencial de la url como un token y lo elimina
-            $urlActual = strtok($_SERVER['REQUEST_URI'], '?') ?? '/';
+            $urlActual = $_SERVER['REQUEST_URI'] ?? '/';
             $metodo = $_SERVER['REQUEST_METHOD'];
 
             if($metodo === 'GET'){
