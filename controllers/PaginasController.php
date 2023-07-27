@@ -47,10 +47,11 @@ class PaginasController{
         $router->render('paginas/entrada');
     }
     public static function contacto(Router $router){
-
+        $mensaje = "";
+        
         if($_SERVER['REQUEST_METHOD'] === 'POST' ){
 
-            $mensaje = "";
+            
 
             $respuestas = $_POST['contacto'];
 
