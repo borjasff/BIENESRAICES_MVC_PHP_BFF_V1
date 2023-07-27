@@ -37,9 +37,9 @@
                     <a href="/propiedades">Anuncios</a>
                     <a href="/blog">Blog</a>
                     <a href="/contacto">Contacto</a>
-                <?php if (!$auth) : ?>
+                <!--<?php //if (!$auth) : ?>
                 <a href="/login">Iniciar Sesion</a>
-                <?php endif; ?>
+                <?php //endif; ?>-->
                 <?php if ($auth) : ?>
                 <a href="/logout">Cerrar Sesion</a>
                 <?php endif; ?>
