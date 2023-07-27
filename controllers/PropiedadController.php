@@ -127,22 +127,19 @@ class PropiedadController {
     ]);
     }
 
-    public static function eliminar(){
+    public static function eliminar(Router $router){
 
                 //borrar propiedades
     if($_SERVER['REQUEST_METHOD'] === 'POST'){
-
+        $tipo = $_POST['tipo'];
         //validamos los datos
         $id = $_POST['id'];
         $id = filter_var($id, FILTER_VALIDATE_INT);
 
-    if($id){
-        $tipo = $_POST['tipo'];
-
-        if(validarTipoContenido($tipo)){
+        //encontrar y eliminar la propiedad
             $propiedad = Propiedad::find($id);
             $resultado = $propiedad->eliminar();
-
+        //redireccionar
             if($resultado) {
                 header('location: /propiedades');
             }
