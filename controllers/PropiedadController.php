@@ -63,7 +63,7 @@ class PropiedadController {
                     $resultado = $propiedad->guardar();
 
                     if($resultado) {
-                        header('location: /propiedades');
+                        header('location: /admin');
                     }
                 }
             }
