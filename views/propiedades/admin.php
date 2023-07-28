@@ -48,6 +48,10 @@
             </tbody>
         </table>
 
+        <a href="/propiedades/crear" class="boton boton-verde">Nueva propiedad</a>
+        <a href="/vendedores/crear" class="boton boton-amarillo">Nuevo vendedor</a>
+
+
         <h2>Vendedores</h2>
         <table class="propiedades">
             <thead>
@@ -72,7 +76,7 @@
                             <input type="submit" class="boton-rojo-block" value="Eliminar">
                         </form>
 
-                        <a href="vendedores/actualizar?id=<?php echo $vendedor->id; ?>" class="boton-amarillo-block">Actualizar</a>
+                        <a href="/vendedores/actualizar?id=<?php echo $vendedor->id; ?>" class="boton-amarillo-block">Actualizar</a>
                     </td>
                 </tr>
                 <?php endforeach; ?>
