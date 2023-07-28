@@ -19,19 +19,17 @@ class ActiveRecord{
         public function guardar(){
             if(!is_null($this->id)){
                 //actualizar
-                $this->actualizar();
+                $resultado = $this->actualizar();
             }else{
                 //crear nuevo registro
-                $this->crear();
+                $resultado = $this->crear();
             }
-        
+            return $resultado;
         }
     
         public function crear(){
-    
             //sanitizar la entrada de datos
-    $atributos = $this-> sanitizarAtributos();
-    
+            $atributos = $this-> sanitizarAtributos();
     
             //insertar en la base de datos
             $query = " INSERT INTO " . static::$tabla . " ( ";
@@ -46,7 +44,7 @@ class ActiveRecord{
             if($resultado){
             //redireccionar al usuario
             //solo funciona si no tenemos nada de html previo
-                header('Location: /admin?resultado=1');
+                header('Location: /admin');
             };
         }
     
@@ -68,7 +66,7 @@ class ActiveRecord{
                 if($resultado){
                     //redireccionar al usuario
                     //Para actualizar la propiedad
-                    header('Location: /admin?resultado=2');
+                    header('Location: /admin');
                     }
         }
         //eliminar un registro
@@ -80,7 +78,7 @@ class ActiveRecord{
             //nos manda a admin
             if($resultado){
                 $this->borrarImagen();
-            header('location: /admin?resultado=3');
+            header('location: /admin');
             }
         }
     
